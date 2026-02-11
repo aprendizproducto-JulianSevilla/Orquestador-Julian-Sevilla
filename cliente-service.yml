@@ -1,0 +1,5 @@
+server:
+  port: 8081
+
+mensaje:
+  test: "Hola, esto viene del Config Server"
