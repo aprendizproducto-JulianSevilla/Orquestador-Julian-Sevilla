@@ -1,0 +1,13 @@
+multitenancy_enabled: false
+
+server:
+  http_listen_port: 9009
+
+blocks_storage:
+  backend: filesystem
+  filesystem:
+    dir: /tmp/mimir
+
+limits:
+  ingestion_rate: 10000
+  
