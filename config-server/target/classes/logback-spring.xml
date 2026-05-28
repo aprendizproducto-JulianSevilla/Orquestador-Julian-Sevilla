@@ -1,0 +1,20 @@
+<configuration>
+
+    <!-- Appender para enviar logs por OTLP al Collector -->
+    <appender name="OTEL" class="io.opentelemetry.instrumentation.logback.appender.v1_0.OpenTelemetryAppender">
+        <endpoint>http://localhost:4317</endpoint>
+        <serviceName>${config-server}</serviceName>
+    </appender>
+
+    <!-- Appender para consola -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="OTEL"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
